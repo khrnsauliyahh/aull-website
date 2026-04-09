@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCT DREAM Official - 7 Dream Forever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-green: #a3da0de3;
+            --deep-black: #000000;
+            --glass-bg: rgba(49, 141, 37, 0.452);
+            --glass-border: rgba(129, 255, 0, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+        
+        body { 
+            background-color: var(--deep-black); 
+            background: radial-gradient(circle at top right, #3d8b08 0%, #000 75%);
+            color: #fcfdfc; line-height: 1.6; overflow-x: hidden;
+        }
+
+        /* Mode Admin Button */
+        .admin-toggle {
+            position: fixed; bottom: 20px; left: 20px;
+            background: #000; border: 2px solid var(--neon-green); color: var(--neon-green);
+            padding: 10px 20px; border-radius: 50px; cursor: pointer; z-index: 9999;
+            font-weight: 800; font-size: 10px; transition: 0.3s;
+        }
+        .admin-active { background: var(--neon-green) !important; color: #000 !important; box-shadow: 0 0 20px var(--neon-green); }
+
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        section { margin-bottom: 100px; }
+
+        /* Hero Header */
+        header { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-family: 'Syncopate', sans-serif; color: var(--neon-green); font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 10px; }
+        .tagline { letter-spacing: 5px; color: #adf32c; text-transform: uppercase; font-weight: 300; }
+        h2 { font-family: 'Syncopate', sans-serif; color: var(--neon-green); margin-bottom: 40px; text-align: center; font-size: 1.4rem; letter-spacing: 3px; }
+
+        /* 1. SEJARAH SECTION */
+        .story-card { 
+            background: linear-gradient(145deg, rgba(129, 255, 0, 0.05) 0%, rgba(0,0,0,1) 100%);
+            border: 1px solid var(--glass-border); padding: 40px; border-radius: 25px; text-align: center; 
+        }
+        .highlight { color: var(--neon-green); font-weight: 800; }
+
+        /* 2. BIODATA GRID */
+        .bio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .bio-card { 
+            background: var(--glass-bg); border: 1px solid var(--glass-border); 
+            padding: 25px; border-radius: 20px; transition: 0.3s;
+        }
+        .bio-card:hover { border-color: var(--neon-green); transform: translateY(-5px); }
+        .bio-card h3 { color: var(--neon-green); font-family: 'Syncopate', sans-serif; font-size: 1rem; margin-bottom: 10px; }
+        .bio-card p { font-size: 0.85rem; color: #bbb; }
+
+        /* 3 & 4. LIST ITEMS (ALBUM & SHOP) */
+        .list-container { display: flex; flex-direction: column; gap: 10px; }
+        .list-item { 
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(51, 156, 10, 0.02); padding: 20px; border-radius: 15px; 
+            border: 1px solid rgba(73, 185, 8, 0.329); transition: 0.3s;
+        }
+        .list-item:hover { background: rgba(166, 255, 0, 0.26); border-color: var(--glass-border); }
+        .item-info h4 { font-size: 1.1rem; color: #427005; }
+        .item-info span { font-size: 0.8rem; color: var(--neon-green); }
+        .buy-tag { font-weight: 800; color: var(--neon-green); font-size: 0.8rem; text-decoration: none; border: 1px solid var(--neon-green); padding: 5px 15px; border-radius: 50px; }
+
+        /* 5. GRADIENT REVIEW */
+        .review-box { 
+            background: linear-gradient(180deg, rgba(100, 190, 10, 0.336) 0%, rgba(0,0,0,0) 100%);
+            border: 1px solid var(--glass-border); padding: 30px; border-radius: 25px; 
+        }
+        .review-input { width: 100%; padding: 15px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #222; background: #000; color: #fff; outline: none; }
+        .review-input:focus { border-color: var(--neon-green); }
+        .btn-post { background: var(--neon-green); color: #000; border: none; padding: 15px; border-radius: 50px; font-weight: 800; cursor: pointer; width: 100%; text-transform: uppercase; transition: 0.3s; }
+        .btn-post:hover { box-shadow: 0 0 20px var(--neon-green); }
+        
+        .review-item { 
+            background: linear-gradient(90deg, rgba(76, 146, 7, 0.541) 0%, transparent 100%);
+            padding: 20px; border-radius: 15px; margin-top: 15px; border-left: 4px solid var(--neon-green);
+        }
+
+        footer { text-align: center; padding: 60px; border-top: 1px solid #111; }
+        .socials { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .social-link { color: #b0fc366e; text-decoration: none; font-size: 0.8rem; border: 1px solid #222; padding: 8px 18px; border-radius: 50px; transition: 0.3s; }
+        .social-link:hover { color: var(--neon-green); border-color: var(--neon-green); }
+    </style>
+</head>
+<body>
+
+<button class="admin-toggle" onclick="toggleEdit()" id="adminBtn">🔒 MODE ADMIN: OFF</button>
+
+<div class="container">
+    
+    <header>
+        <h1>NCT DREAM</h1>
+        <p class="tagline">-7 Dream Always Together-</p>
+    </header>
+
+    <section id="legacy">
+        <h2>THE JOURNEY</h2>
+        <div class="story-card">
+            <p>Memulai perjalanan pada <span class="highlight">25 Agustus 2016</span> dengan single ceria "Chewing Gum", NCT DREAM awalnya hadir sebagai unit remaja dengan sistem kelulusan. Namun, kekuatan ikatan antara member dan dukungan luar biasa dari NCTzen berhasil menjadikan mereka unit permanen.</p>
+            <br>
+            <p>Kesuksesan mereka meledak secara global, menjadikan mereka <span class="highlight">Triple Million Seller</span>. Dari panggung kecil hingga stadium tur dunia <span class="highlight">THE DREAM SHOW 3</span>, mereka membuktikan bahwa "7 Dream" adalah simbol kesuksesan sejati di industri K-Pop.</p>
+        </div>
+    </section>
+
+    <section id="members">
+        <h2>THE 7 DREAMERS</h2>
+        <div class="bio-grid">
+            <div class="bio-card">
+                <h3>MARK</h3>
+                <p><b>Profesi:</b> Leader, Main Rapper</p>
+                <p><b>Lahir:</b> 2 Agustus 1999</p>
+            </div>
+            <div class="bio-card">
+                <h3>RENJUN</h3>
+                <p><b>Profesi:</b> Main Vocalist</p>
+                <p><b>Lahir:</b> 23 Maret 2000</p>
+            </div>
+            <div class="bio-card">
+                <h3>JENO</h3>
+                <p><b>Profesi:</b> Main Dancer, Rapper</p>
+                <p><b>Lahir:</b> 23 April 2000</p>
+            </div>
+            <div class="bio-card">
+                <h3>HAECHAN</h3>
+                <p><b>Profesi:</b> Main Vocalist</p>
+                <p><b>Lahir:</b> 6 Juni 2000</p>
+            </div>
+            <div class="bio-card">
+                <h3>JAEMIN</h3>
+                <p><b>Profesi:</b> Visual, Center, Rapper</p>
+                <p><b>Lahir:</b> 13 Agustus 2000</p>
+            </div>
+            <div class="bio-card">
+                <h3>CHENLE</h3>
+                <p><b>Profesi:</b> Main Vocalist</p>
+                <p><b>Lahir:</b> 22 November 2001</p>
+            </div>
+            <div class="bio-card">
+                <h3>JISUNG</h3>
+                <p><b>Profesi:</b> Main Dancer, Maknae</p>
+                <p><b>Lahir:</b> 5 Februari 2002</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="albums">
+        <h2>THE ALBUM</h2>
+        <div class="list-container">
+            <div class="list-item"><div class="item-info"><h4>DREAM()SCAPE</h4><span>Mini Album (2024)</span></div></div>
+            <div class="list-item"><div class="item-info"><h4>ISTJ</h4><span>3rd Full Album (2023)</span></div></div>
+            <div class="list-item"><div class="item-info"><h4>Glitch Mode</h4><span>2nd Full Album (2022)</span></div></div>
+            <div class="list-item"><div class="item-info"><h4>Hot Sauce</h4><span>1st Full Album (2021)</span></div></div>
+            <div class="list-item"><div class="item-info"><h4>We Boom</h4><span>Breakthrough Mini Album (2019)</span></div></div>
+        </div>
+    </section>
+
+    <section id="shop">
+        <h2>OFFICIAL MERCHANDISE</h2>
+        <div class="list-container">
+            <div class="list-item">
+                <div class="item-info"><h4>Official Lightstick v2</h4><span>IDR 850.000</span></div>
+                <a href="#" class="buy-tag">Shop Now</a>
+            </div>
+            <div class="list-item">
+                <div class="item-info"><h4>TDS 3 World Tour Hoodie</h4><span>IDR 725.000</span></div>
+                <a href="#" class="buy-tag">Shop Now</a>
+            </div>
+            <div class="list-item">
+                <div class="item-info"><h4>Random Photo Card Pack</h4><span>IDR 150.000</span></div>
+                <a href="#" class="buy-tag">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>FAN EXPERIENCE</h2>
+        <div class="review-box">
+            <input type="text" id="revName" class="review-input" placeholder="Nama / Instagram Anda">
+            <textarea id="revMsg" class="review-input" rows="3" placeholder="Tuliskan ulasan atau pengalaman belanja Anda..."></textarea>
+            <button class="btn-post" onclick="postReview()">Kirim Review</button>
+
+            <div id="reviewList">
+                <div class="review-item">
+                    <strong style="color:var(--neon-green)">@nctzen_indo</strong>
+                    <p>Lightstick ori dan sampai dengan sangat cepat! Packaging aman banget. 7 Dream Forever!</p>
+                </div>
+                <div class="review-item">
+                    <strong style="color:var(--neon-green)">@dreamies_pwr</strong>
+                    <p>Album ISTJ kualitasnya keren banget, dapet PC Jaemin! Gak nyesel belanja di sini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 NCT DREAM Official Fanpage</p>
+    <div class="socials">
+        <a href="https://x.com/NCTsmtown_DREAM" class="social-link">𝕏 Twitter</a>
+        <a href="https://youtube.com/@nctdream" class="social-link">YouTube</a>
+        <a href="https://instagram.com/nct_dream" class="social-link">Instagram</a>
+    </div>
+</footer>
+
+<script>
+    // FUNGSI MODE ADMIN: Mengedit Semua Teks
+    function toggleEdit() {
+        const btn = document.getElementById('adminBtn');
+        const isEditing = document.body.contentEditable === "true";
+        if (isEditing) {
+            document.body.contentEditable = "false";
+            btn.innerHTML = "🔒 MODE ADMIN: OFF";
+            btn.classList.remove('admin-active');
+        } else {
+            document.body.contentEditable = "true";
+            btn.innerHTML = "🔓 MODE ADMIN: ON (Edit Apapun)";
+            btn.classList.add('admin-active');
+            btn.contentEditable = "false"; // Tombol tidak ikut ter-edit
+        }
+    }
+
+    // FUNGSI POST REVIEW
+    function postReview() {
+        const nameInput = document.getElementById('revName');
+        const msgInput = document.getElementById('revMsg');
+        const container = document.getElementById('reviewList');
+
+        if(nameInput.value.trim() && msgInput.value.trim()) {
+            const div = document.createElement('div');
+            div.className = 'review-item';
+            div.innerHTML = `<strong style="color:var(--neon-green)">@${nameInput.value.replace('@','')}</strong><p>${msgInput.value}</p>`;
+            
+            container.prepend(div);
+            nameInput.value = '';
+            msgInput.value = '';
+        } else {
+            alert("Harap isi nama dan ulasan Anda!");
+        }
+    }
+</script>
+
+</body>
+</html>
